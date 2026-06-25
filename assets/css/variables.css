@@ -2,7 +2,7 @@
    Custom Fluid Cursor Styles - Fully Production Ready
    ========================================================================== */
 
-/* إخفاء الماوس الطبيعي بأمان فقط عندما يعمل الجافاسكريبت بنجاح */
+/* تفعيل الأمان: إخفاء الماوس الطبيعي فقط عند عمل الجافاسكريبت بنجاح */
 .custom-cursor-enabled, 
 .custom-cursor-enabled a, 
 .custom-cursor-enabled button,
@@ -12,57 +12,58 @@
     cursor: none !important;
 }
 
-/* النقطة المركزية الثابتة مع سن الماوس */
+/* النقطة المركزية */
 .c-engine-dot {
     width: 6px;
     height: 6px;
-    background-color: var(--clr-accent);
+    background-color: var(--clr-accent, #D4AF37);
     position: fixed;
     top: 0;
     left: 0;
     pointer-events: none;
-    z-index: var(--z-cursor);
-    border-radius: var(--radius-round);
+    z-index: 999999; /* رقم عالي جداً ليكون فوق الـ Preloader والموقع دائماً */
+    border-radius: 50%;
     will-change: transform;
+    transform: translate(-50%, -50%);
 }
 
-/* الدائرة الخارجية الإنسيابية الذهبية التي تتبع الماوس بلين */
+/* الدائرة الخارجية الإنسيابية الذهبية */
 .c-engine-outline {
     width: 26px;
     height: 26px;
-    border: 2px solid var(--clr-accent);
+    border: 2px solid var(--clr-accent, #D4AF37);
     background-color: rgba(214, 175, 55, 0.03);
     position: fixed;
     top: 0;
     left: 0;
     pointer-events: none;
-    z-index: calc(var(--z-cursor) - 1);
-    border-radius: var(--radius-round);
-    transition: opacity var(--transition-fast) var(--ease-standard), 
-                width var(--transition-fast) var(--ease-standard), 
-                height var(--transition-fast) var(--ease-standard), 
-                background-color var(--transition-fast) var(--ease-standard),
-                border-color var(--transition-fast) var(--ease-standard);
+    z-index: 999998;
+    border-radius: 50%;
+    transition: opacity var(--transition-fast, 0.25s) var(--ease-standard, ease), 
+                width var(--transition-fast, 0.25s) var(--ease-standard, ease), 
+                height var(--transition-fast, 0.25s) var(--ease-standard, ease), 
+                background-color var(--transition-fast, 0.25s) var(--ease-standard, ease),
+                border-color var(--transition-fast, 0.25s) var(--ease-standard, ease);
     will-change: transform;
+    transform: translate(-50%, -50%);
 }
 
-/* تأثير الـ Hover عند الوقوف على الأزرار والروابط والعناصر التفاعلية */
+/* تأثير الـ Hover عند الوقوف على الأزرار والروابط */
 .c-engine-outline--hover {
     width: 48px;
     height: 48px;
     background-color: rgba(214, 175, 55, 0.15);
-    border-color: var(--clr-primary);
-    box-shadow: 0 0 15px rgba(214, 175, 55, 0.4); /* تأثير توهج نيون ذهبي */
+    border-color: var(--clr-primary, #ffffff);
+    box-shadow: 0 0 15px rgba(214, 175, 55, 0.4);
 }
 
-/* اختفاء النقطة المركزية أثناء الـ Hover لإعطاء تأثير بصري عميق وثلاثي الأبعاد */
+/* اختفاء النقطة أثناء الـ Hover */
 .c-engine-dot--hover {
-    transform: translate(-50%, -50%) scale(0) !important;
+    opacity: 0 !important;
 }
 
-/* تأثير الانكماش السريع والنبض عند الضغط الفعلي بالماوس (Click) */
+/* تأثير الضغط الفعلي */
 .c-engine-outline--click {
-    transform: translate3d(var(--mx), var(--my), 0) translate(-50%, -50%) scale(0.8) !important;
+    transform: scale(0.8) translate(-50%, -50%) !important;
     background-color: rgba(214, 175, 55, 0.3);
-    border-color: var(--clr-accent);
 }
