@@ -1,19 +1,38 @@
 *,
 *::before,
-*::after{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
+    /* نمنع أي ظهور للماوس الافتراضي فقط إذا كان نظام الكاستم كورسور يعمل بشكل مستقر */
+    /* cursor: none; 👈 لا تضعها هنا بشكل عام لتجنب اختفاء الماوس تماماً في حال حدوث خطأ */
 }
 
-html.loading{
-    overflow:hidden;
+/* 🔒 الحل الآمن: يمنع التمرير العرضي فقط لضمان عدم تشوه التصميم أثناء التحميل */
+html.loading {
+    overflow-x: hidden; 
 }
 
+/* 🛡️ حماية الـ body والعناصر من الإخفاء القسري من ملفات الجافاسكريبت الأخرى */
+html.loading body,
+body {
+    opacity: 1 !important;
+    visibility: visible !important;
+    min-height: 100vh;
+    background-color: #000; /* أو اللون الخلفي الأساسي لمتجرك الفاخر */
+    color: #fff;
+}
+
+/* تأكد أن عناصر الـ Navbar والـ Hero لها أولوية ظهور مستقرة */
+.main-navbar, 
+.hero-viewport-section {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
 body{
     font-family:var(--font-primary);
     background:var(--clr-bg);
