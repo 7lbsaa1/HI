@@ -1,141 +1,68 @@
-:root{
+/* ==========================================================================
+   Custom Fluid Cursor Styles - Fully Production Ready
+   ========================================================================== */
 
---font-primary:"Manrope","Cairo",sans-serif;
---font-secondary:"Plus Jakarta Sans","Cairo",sans-serif;
-
---clr-bg:#fafafa;
---clr-surface:#ffffff;
---clr-surface-solid:#ffffff;
-
---clr-text:#111111;
---clr-text-light:#555555;
-
---clr-primary:#111111;
---clr-secondary:#333333;
-
---clr-accent:#D4AF37;
---clr-accent-light:#FFE38A;
---clr-accent-dark:#B78D28;
-
---clr-success:#22C55E;
---clr-warning:#F59E0B;
---clr-danger:#EF4444;
---clr-info:#3B82F6;
-
---clr-border:rgba(0,0,0,.08);
-
---glass-bg:rgba(255,255,255,.08);
---glass-border:rgba(255,255,255,.12);
-
---shadow-xs:0 2px 6px rgba(0,0,0,.04);
---shadow-sm:0 8px 20px rgba(0,0,0,.08);
---shadow-md:0 18px 45px rgba(0,0,0,.12);
---shadow-lg:0 35px 90px rgba(0,0,0,.18);
---shadow-xl:0 60px 140px rgba(0,0,0,.28);
-
---radius-xs:8px;
---radius-sm:14px;
---radius-md:22px;
---radius-lg:32px;
---radius-xl:42px;
---radius-round:999px;
-
---spacing-2xs:.25rem;
---spacing-xs:.5rem;
---spacing-sm:1rem;
---spacing-md:2rem;
---spacing-lg:4rem;
---spacing-xl:6rem;
---spacing-2xl:8rem;
-
---navbar-height:82px;
-
---container-width:1500px;
-
---transition-fast:.25s;
---transition-normal:.45s;
---transition-slow:.8s;
-
---ease-standard:cubic-bezier(.4,0,.2,1);
---ease-premium:cubic-bezier(.16,1,.3,1);
---ease-out:cubic-bezier(.22,1,.36,1);
-
---z-loader:999999;
---z-transition:999998;
---z-cursor:999997;
---z-modal:9000;
---z-overlay:8000;
---z-navbar:7000;
---z-toast:6000;
---z-progress:5000;
-
---blur-sm:8px;
---blur-md:20px;
---blur-lg:35px;
-
---max-text-width:720px;
-
---product-image-ratio:4/5;
-
---hero-overlay:linear-gradient(
-180deg,
-rgba(0,0,0,.2),
-rgba(0,0,0,.65)
-);
-
-color-scheme:light;
-
+/* إخفاء الماوس الطبيعي بأمان فقط عندما يعمل الجافاسكريبت بنجاح */
+.custom-cursor-enabled, 
+.custom-cursor-enabled a, 
+.custom-cursor-enabled button,
+.custom-cursor-enabled [role="button"],
+.custom-cursor-enabled .theme-btn,
+.custom-cursor-enabled [data-quickview-trigger] {
+    cursor: none !important;
 }
 
-[data-theme="dark"]{
-
---clr-bg:#050505;
---clr-surface:#0f0f0f;
---clr-surface-solid:#111111;
-
---clr-text:#f5f5f5;
---clr-text-light:#bdbdbd;
-
---clr-primary:#ffffff;
---clr-secondary:#dddddd;
-
---clr-border:rgba(255,255,255,.08);
-
---glass-bg:rgba(18,18,18,.55);
---glass-border:rgba(255,255,255,.08);
-
---shadow-xs:0 2px 6px rgba(0,0,0,.35);
---shadow-sm:0 8px 20px rgba(0,0,0,.45);
---shadow-md:0 20px 50px rgba(0,0,0,.55);
---shadow-lg:0 35px 100px rgba(0,0,0,.65);
-
-color-scheme:dark;
-
+/* النقطة المركزية الثابتة مع سن الماوس */
+.c-engine-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--clr-accent);
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: var(--z-cursor);
+    border-radius: var(--radius-round);
+    will-change: transform;
 }
 
-[dir="rtl"]{
-
---font-primary:"Cairo",sans-serif;
---font-secondary:"Cairo",sans-serif;
-
+/* الدائرة الخارجية الإنسيابية الذهبية التي تتبع الماوس بلين */
+.c-engine-outline {
+    width: 26px;
+    height: 26px;
+    border: 2px solid var(--clr-accent);
+    background-color: rgba(214, 175, 55, 0.03);
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: calc(var(--z-cursor) - 1);
+    border-radius: var(--radius-round);
+    transition: opacity var(--transition-fast) var(--ease-standard), 
+                width var(--transition-fast) var(--ease-standard), 
+                height var(--transition-fast) var(--ease-standard), 
+                background-color var(--transition-fast) var(--ease-standard),
+                border-color var(--transition-fast) var(--ease-standard);
+    will-change: transform;
 }
 
-::selection{
-
-background:var(--clr-accent);
-color:#000;
-
+/* تأثير الـ Hover عند الوقوف على الأزرار والروابط والعناصر التفاعلية */
+.c-engine-outline--hover {
+    width: 48px;
+    height: 48px;
+    background-color: rgba(214, 175, 55, 0.15);
+    border-color: var(--clr-primary);
+    box-shadow: 0 0 15px rgba(214, 175, 55, 0.4); /* تأثير توهج نيون ذهبي */
 }
 
-html{
-
-accent-color:var(--clr-accent);
-
+/* اختفاء النقطة المركزية أثناء الـ Hover لإعطاء تأثير بصري عميق وثلاثي الأبعاد */
+.c-engine-dot--hover {
+    transform: translate(-50%, -50%) scale(0) !important;
 }
 
-body{
-
-background:var(--clr-bg);
-color:var(--clr-text);
-
+/* تأثير الانكماش السريع والنبض عند الضغط الفعلي بالماوس (Click) */
+.c-engine-outline--click {
+    transform: translate3d(var(--mx), var(--my), 0) translate(-50%, -50%) scale(0.8) !important;
+    background-color: rgba(214, 175, 55, 0.3);
+    border-color: var(--clr-accent);
 }
