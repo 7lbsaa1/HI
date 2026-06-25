@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>7LBSAA LUXE | Premium Fashion Store</title>
+
+  <meta name="description"
+        content="Luxury Fashion E-Commerce Experience powered by GSAP, Lenis, SplitType and premium interactions.">
+
+  <meta name="theme-color" content="#000000">
+
+  <!-- SEO -->
+  <meta property="og:title" content="7LBSAA LUXE">
+  <meta property="og:description"
+        content="Luxury Fashion Experience">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cairo:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./assets/css/variables.css">
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+  <!-- SplitType -->
+  <script src="https://unpkg.com/split-type"></script>
+
+  <!-- Lenis -->
+  <script src="https://unpkg.com/@studio-freight/lenis/bundled/lenis.min.js"></script>
+
+  <!-- Swiper -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+
+<body class="loading">
+
+<!-- ====================================================== -->
+<!-- SVG DEFINITIONS -->
+<!-- ====================================================== -->
+
+<svg width="0" height="0" style="position:absolute">
+
+<defs>
+
+<linearGradient id="premiumGradient">
+
+<stop offset="0%" stop-color="#D4AF37"/>
+
+<stop offset="100%" stop-color="#F5E7A1"/>
+
+</linearGradient>
+
+<filter id="glassBlur">
+
+<feGaussianBlur stdDeviation="25"/>
+
+</filter>
+
+</defs>
+
+</svg>
+
+<!-- ====================================================== -->
+<!-- LOADER -->
+<!-- ====================================================== -->
+
+<div id="preloader" class="preloader-layer">
+
+<div class="preloader-wrap">
+
+<h1 class="preloader-brand">
+7LBSAA
+</h1>
+
+<div class="preloader-progress-track">
+
+<div
+id="preloaderTrack"
+class="preloader-progress-bar">
+</div>
+
+</div>
+
+<p>
+
+Loading
+
+<span id="preloadCounter">
+
+0
+
+</span>
+
+%
+
+</p>
+
+</div>
+
+</div>
+
+<!-- ====================================================== -->
+<!-- CUSTOM CURSOR -->
+<!-- ====================================================== -->
+
+<div class="custom-cursor">
+
+<div class="cursor-dot"></div>
+
+<div class="cursor-circle"></div>
+
+</div>
+
+<!-- ====================================================== -->
+<!-- SCROLL PROGRESS -->
+<!-- ====================================================== -->
+
+<div class="scroll-progress">
+
+<div id="scrollBar"></div>
+
+</div>
+
+<!-- ====================================================== -->
+<!-- NAVBAR -->
+<!-- ====================================================== -->
+
+<header
+id="globalHeader"
+class="main-navbar">
+
+<div class="nav-container">
+
+<a
+href="#"
+class="brand-logo">
+
+7LBSAA
+
+</a>
+
+<nav class="desktop-nav">
+
+<a href="#home">Home</a>
+
+<a href="#collections">Collections</a>
+
+<a href="#products">Shop</a>
+
+<a href="#about">About</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+<div class="nav-actions">
+
+<button
+id="themeToggle"
+class="icon-button">
+
+🌙
+
+</button>
+
+<button
+id="searchToggle"
+class="icon-button">
+
+🔍
+
+</button>
+
+<button
+id="cartToggle"
+class="icon-button">
+
+🛒
+
+<span class="cart-count">
+
+0
+
+</span>
+
+</button>
+
+</div>
+
+</div>
+
+</header><!-- ====================================================== -->
+<!-- SEARCH OVERLAY -->
+<!-- ====================================================== -->
+
+<div id="searchOverlay" class="search-overlay">
+
+    <button id="closeSearch" class="close-search">
+        ✕
+    </button>
+
+    <div class="search-content">
+
+        <h2 class="split-words">
+            Search Luxury Collections
+        </h2>
+
+        <form class="search-form">
+
+            <input
+                type="search"
+                placeholder="Search products..."
+                aria-label="Search Products">
+
+            <button type="submit">
+                Search
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- ====================================================== -->
+<!-- HERO SECTION -->
+<!-- ====================================================== -->
+
+<section
+id="home"
+class="hero-viewport-section">
+
+    <div class="hero-bg-media">
+
+        <video
+            class="hero-video-asset"
+            autoplay
+            muted
+            loop
+            playsinline>
+
+            <source
+                src="./assets/video/hero.mp4"
+                type="video/mp4">
+
+        </video>
+
+        <div class="gradient-shimmer-overlay"></div>
+
+    </div>
+
+    <div class="hero-content-alignment">
+
+        <p class="hero-label split-words">
+
+            NEW COLLECTION 2026
+
+        </p>
+
+        <h1
+            class="hero-main-title split-words">
+
+            Luxury Fashion
+            Crafted
+            For Visionaries
+
+        </h1>
+
+        <p
+            class="hero-description split-words">
+
+            Premium garments inspired by timeless
+            elegance, modern architecture,
+            and world-class craftsmanship.
+
+        </p>
+
+        <div class="hero-actions">
+
+            <a
+                href="#products"
+                class="premium-btn magnetic">
+
+                Shop Now
+
+            </a>
+
+            <a
+                href="#collections"
+                class="premium-btn-outline magnetic">
+
+                Explore Collection
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="scroll-indicator">
+
+        <span></span>
+
+    </div>
+
+</section>
+
+<!-- ====================================================== -->
+<!-- PREMIUM MARQUEE -->
+<!-- ====================================================== -->
+
+<section class="infinite-marquee-strip">
+
+    <div class="marquee-track">
+
+        <span>Luxury</span>
+
+        <span>Premium</span>
+
+        <span>Minimal</span>
+
+        <span>Exclusive</span>
+
+        <span>Designer</span>
+
+        <span>Luxury</span>
+
+        <span>Premium</span>
+
+        <span>Minimal</span>
+
+        <span>Exclusive</span>
+
+        <span>Designer</span>
+
+    </div>
+
+</section>
+
+<!-- ====================================================== -->
+<!-- FEATURED CATEGORIES -->
+<!-- ====================================================== -->
+
+<section
+id="collections"
+class="section-padding">
+
+    <div class="section-header">
+
+        <span class="section-tag">
+
+            COLLECTIONS
+
+        </span>
+
+        <h2 class="split-words">
+
+            Explore Our Categories
+
+        </h2>
+
+    </div>
+
+    <div class="grid-layout-four-col">
+
+        <article
+            class="category-card"
+            data-parallax-strength="18">
+
+            <div class="image-mask">
+
+                <img
+                    class="luxury-card-img"
+                    src="./assets/images/category-men.jpg"
+                    alt="Men Fashion"
+                    loading="lazy">
+
+            </div>
+
+            <h3>
+
+                Men
+
+            </h3>
+
+        </article>
+
+        <article
+            class="category-card"
+            data-parallax-strength="22">
+
+            <div class="image-mask">
+
+                <img
+                    class="luxury-card-img"
+                    src="./assets/images/category-shoes.jpg"
+                    alt="Shoes"
+                    loading="lazy">
+
+            </div>
+
+            <h3>
+
+                Shoes
+
+            </h3>
+
+        </article>
+
+        <article
+            class="category-card"
+            data-parallax-strength="20">
+
+            <div class="image-mask">
+
+                <img
+                    class="luxury-card-img"
+                    src="./assets/images/category-accessories.jpg"
+                    alt="Accessories"
+                    loading="lazy">
+
+            </div>
+
+            <h3>
+
+                Accessories
+
+            </h3>
+
+        </article>
+
+        <article
+            class="category-card"
+            data-parallax-strength="25">
+
+            <div class="image-mask">
+
+                <img
+                    class="luxury-card-img"
+                    src="./assets/images/category-sale.jpg"
+                    alt="Sale"
+                    loading="lazy">
+
+            </div>
+
+            <h3>
+
+                Sale
+
+            </h3>
+
+        </article>
+
+    </div>
+
+</section>
+<!-- ====================================================== -->
+<!-- FEATURED PRODUCTS -->
+<!-- ====================================================== -->
+
+<section
+id="products"
+class="section-padding">
+
+    <div class="section-header">
+
+        <span class="section-tag">
+
+            BEST SELLERS
+
+        </span>
+
+        <h2 class="split-words">
+
+            Featured Luxury Pieces
+
+        </h2>
+
+        <p>
+
+            Carefully selected premium garments crafted
+            with exceptional materials and timeless style.
+
+        </p>
+
+    </div>
+
+    <div class="grid-layout-four-col">
+
+        <!-- PRODUCT -->
+
+        <article
+            class="product-card glass-card"
+            data-parallax-strength="20">
+
+            <div class="product-image-wrapper">
+
+                <span class="product-badge">
+
+                    NEW
+
+                </span>
+
+                <img
+                    class="luxury-card-img"
+                    src="./assets/images/product-1.jpg"
+                    alt="Luxury Jacket"
+                    loading="lazy">
+
+                <div class="product-overlay">
+
+                    <button
+                        class="quick-view-btn magnetic"
+                        data-product="1">
+
+                        Quick View
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="product-content">
+
+                <span class="product-category">
+
+                    Jackets
+
+                </span>
+
+                <h3>
+
+                    Premium Leather Jacket
+
+                </h3>
+
+                <div class="product-rating">
+
+                    ★★★★★
+
+                </div>
+
+                <div class="product-footer">
+
+                    <span class="price">
+
+                        $320
+
+                    </span>
+
+                    <button
+                        class="add-cart magnetic">
+
+                        Add To Cart
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+        <!-- PRODUCT -->
+
+        <article
+            class="product-card glass-card"
+            data-parallax-strength="16">
+
+            <div class="product-image-wrapper">
+
+                <img
+                    class="luxury-card-img"
+                    src="./assets/images/product-2.jpg"
+                    alt="Luxury Shoes"
+                    loading="lazy">
+
+                <div class="product-overlay">
+
+                    <button
+                        class="quick-view-btn magnetic"
+                        data-product="2">
+
+                        Quick View
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="product-content">
+
+                <span class="product-category">
+
+                    Shoes
+
+                </span>
+
+                <h3>
+
+                    Premium Sneakers
+
+                </h3>
+
+                <div class="product-rating">
+
+                    ★★★★★
+
+                </div>
+
+                <div class="product-footer">
+
+                    <span class="price">
+
+                        $190
+
+                    </span>
+
+                    <button
+                        class="add-cart magnetic">
+
+                        Add To Cart
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+        <!-- PRODUCT -->
+
+        <article
+            class="product-card glass-card"
+            data-parallax-strength="25">
+
+            <div class="product-image-wrapper">
+
+                <span class="product-badge sale">
+
+                    -30%
+
+                </span>
+
+                <img
+                    class="luxury-card-img"
+                    src="./assets/images/product-3.jpg"
+                    alt="Luxury Hoodie"
+                    loading="lazy">
+
+                <div class="product-overlay">
+
+                    <button
+                        class="quick-view-btn magnetic"
+                        data-product="3">
+
+                        Quick View
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="product-content">
+
+                <span class="product-category">
+
+                    Hoodies
+
+                </span>
+
+                <h3>
+
+                    Urban Premium Hoodie
+
+                </h3>
+
+                <div class="product-rating">
+
+                    ★★★★★
+
+                </div>
+
+                <div class="product-footer">
+
+                    <span class="price">
+
+                        $120
+
+                    </span>
+
+                    <button
+                        class="add-cart magnetic">
+
+                        Add To Cart
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+        <!-- PRODUCT -->
+
+        <article
+            class="product-card glass-card"
+            data-parallax-strength="18">
+
+            <div class="product-image-wrapper">
+
+                <img
+                    class="luxury-card-img"
+                    src="./assets/images/product-4.jpg"
+                    alt="Luxury Watch"
+                    loading="lazy">
+
+                <div class="product-overlay">
+
+                    <button
+                        class="quick-view-btn magnetic"
+                        data-product="4">
+
+                        Quick View
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="product-content">
+
+                <span class="product-category">
+
+                    Accessories
+
+                </span>
+
+                <h3>
+
+                    Luxury Watch
+
+                </h3>
+
+                <div class="product-rating">
+
+                    ★★★★★
+
+                </div>
+
+                <div class="product-footer">
+
+                    <span class="price">
+
+                        $450
+
+                    </span>
+
+                    <button
+                        class="add-cart magnetic">
+
+                        Add To Cart
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- ====================================================== -->
+<!-- PRODUCT QUICK VIEW -->
+<!-- ====================================================== -->
+
+<div
+id="quickViewModal"
+class="quick-view-modal">
+
+    <div class="quick-view-backdrop"></div>
+
+    <div class="quick-view-container">
+
+        <button
+            id="closeQuickView"
+            class="close-modal">
+
+            ✕
+
+        </button>
+
+        <div class="quick-view-grid">
+
+            <div class="quick-view-gallery">
+
+                <img
+                    id="quickImage"
+                    src="./assets/images/product-1.jpg"
+                    alt="Product">
+
+            </div>
+
+            <div class="quick-view-details">
+
+                <span
+                    id="quickCategory"
+                    class="product-category">
+
+                    Jackets
+
+                </span>
+
+                <h2 id="quickTitle">
+
+                    Premium Leather Jacket
+
+                </h2>
+
+                <div class="product-rating">
+
+                    ★★★★★
+
+                </div>
+
+                <p id="quickDescription">
+
+                    Crafted with premium leather and modern
+                    tailoring for an elevated luxury experience.
+
+                </p>
+
+                <div class="quick-price">
+
+                    $320
+
+                </div>
+
+                <div class="size-selector">
+
+                    <button>S</button>
+                    <button>M</button>
+                    <button>L</button>
+                    <button>XL</button>
+
+                </div>
+
+                <button
+                    class="premium-btn magnetic">
+
+                    Add To Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ====================================================== -->
+<!-- SKELETON LOADER -->
+<!-- ====================================================== -->
+
+<div
+id="skeletonLayer"
+class="skeleton-layer">
+
+    <div class="skeleton-card"></div>
+    <div class="skeleton-card"></div>
+    <div class="skeleton-card"></div>
+    <div class="skeleton-card"></div>
+
+</div>
+<!-- ====================================================== -->
+<!-- ABOUT -->
+<!-- ====================================================== -->
+
+<section
+id="about"
+class="section-padding about-section">
+
+    <div class="about-grid">
+
+        <div class="about-image"
+             data-parallax-strength="20">
+
+            <div class="image-mask">
+
+                <img
+                    class="luxury-card-img"
+                    src="./assets/images/about.jpg"
+                    alt="Luxury Fashion"
+                    loading="lazy">
+
+            </div>
+
+        </div>
+
+        <div class="about-content">
+
+            <span class="section-tag">
+
+                ABOUT US
+
+            </span>
+
+            <h2 class="split-words">
+
+                Designed For
+                Modern Luxury
+
+            </h2>
+
+            <p>
+
+                Every garment is carefully crafted using premium
+                materials and timeless silhouettes inspired by
+                contemporary architecture and luxury fashion houses.
+
+            </p>
+
+            <ul class="premium-features">
+
+                <li>✓ Premium Materials</li>
+
+                <li>✓ Hand Crafted Details</li>
+
+                <li>✓ Sustainable Production</li>
+
+                <li>✓ Worldwide Shipping</li>
+
+            </ul>
+
+            <a
+                href="#products"
+                class="premium-btn magnetic">
+
+                Discover More
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ====================================================== -->
+<!-- STATS -->
+<!-- ====================================================== -->
+
+<section class="stats-section section-padding">
+
+    <div class="grid-layout-four-col">
+
+        <div class="stat-card">
+
+            <h2
+                class="counter"
+                data-target="12000">
+
+                0
+
+            </h2>
+
+            <p>
+
+                Happy Customers
+
+            </p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2
+                class="counter"
+                data-target="350">
+
+                0
+
+            </h2>
+
+            <p>
+
+                Premium Products
+
+            </p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2
+                class="counter"
+                data-target="42">
+
+                0
+
+            </h2>
+
+            <p>
+
+                Countries
+
+            </p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2
+                class="counter"
+                data-target="99">
+
+                0
+
+            </h2>
+
+            <p>
+
+                Customer Satisfaction %
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ====================================================== -->
+<!-- TESTIMONIALS -->
+<!-- ====================================================== -->
+
+<section
+class="section-padding">
+
+    <div class="section-header">
+
+        <span class="section-tag">
+
+            REVIEWS
+
+        </span>
+
+        <h2 class="split-words">
+
+            Loved By Thousands
+
+        </h2>
+
+    </div>
+
+    <div class="swiper testimonialSwiper">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+
+                <article class="testimonial-card">
+
+                    <p>
+
+                        "Outstanding quality and
+                        premium experience."
+
+                    </p>
+
+                    <h4>
+
+                        Michael Jordan
+
+                    </h4>
+
+                </article>
+
+            </div>
+
+            <div class="swiper-slide">
+
+                <article class="testimonial-card">
+
+                    <p>
+
+                        "One of the best luxury
+                        stores I've ever tried."
+
+                    </p>
+
+                    <h4>
+
+                        Alex Carter
+
+                    </h4>
+
+                </article>
+
+            </div>
+
+            <div class="swiper-slide">
+
+                <article class="testimonial-card">
+
+                    <p>
+
+                        "Beautiful design and
+                        incredible customer service."
+
+                    </p>
+
+                    <h4>
+
+                        Olivia Brown
+
+                    </h4>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ====================================================== -->
+<!-- NEWSLETTER -->
+<!-- ====================================================== -->
+
+<section
+class="newsletter-section">
+
+    <div class="newsletter-box">
+
+        <span class="section-tag">
+
+            NEWSLETTER
+
+        </span>
+
+        <h2 class="split-words">
+
+            Join Our Community
+
+        </h2>
+
+        <p>
+
+            Subscribe to receive exclusive collections,
+            early access and premium offers.
+
+        </p>
+
+        <form class="newsletter-form">
+
+            <input
+                type="email"
+                placeholder="Email Address"
+                required>
+
+            <button
+                class="premium-btn magnetic">
+
+                Subscribe
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- ====================================================== -->
+<!-- INSTAGRAM -->
+<!-- ====================================================== -->
+
+<section
+class="section-padding">
+
+    <div class="section-header">
+
+        <span class="section-tag">
+
+            INSTAGRAM
+
+        </span>
+
+        <h2 class="split-words">
+
+            Follow Our Journey
+
+        </h2>
+
+    </div>
+
+    <div class="grid-layout-four-col">
+
+        <img src="./assets/images/insta1.jpg"
+             loading="lazy"
+             alt="Instagram">
+
+        <img src="./assets/images/insta2.jpg"
+             loading="lazy"
+             alt="Instagram">
+
+        <img src="./assets/images/insta3.jpg"
+             loading="lazy"
+             alt="Instagram">
+
+        <img src="./assets/images/insta4.jpg"
+             loading="lazy"
+             alt="Instagram">
+
+    </div>
+
+</section>
+
+<!-- ====================================================== -->
+<!-- FOOTER -->
+<!-- ====================================================== -->
+
+<footer
+id="contact"
+class="main-footer">
+
+    <div class="footer-grid">
+
+        <div>
+
+            <h2>
+
+                7LBSAA
+
+            </h2>
+
+            <p>
+
+                Luxury Fashion Experience
+                Built With Passion.
+
+            </p>
+
+        </div>
+
+        <div>
+
+            <h4>
+
+                Shop
+
+            </h4>
+
+            <a href="#">Men</a>
+            <a href="#">Shoes</a>
+            <a href="#">Accessories</a>
+            <a href="#">New Arrivals</a>
+
+        </div>
+
+        <div>
+
+            <h4>
+
+                Company
+
+            </h4>
+
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Support</a>
+            <a href="#">Privacy</a>
+
+        </div>
+
+        <div>
+
+            <h4>
+
+                Follow Us
+
+            </h4>
+
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">TikTok</a>
+            <a href="#">YouTube</a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        © 2026 7LBSAA LUXE.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+<!-- ====================================================== -->
+<!-- BACK TO TOP -->
+<!-- ====================================================== -->
+
+<button
+    id="backToTop"
+    class="back-to-top magnetic"
+    aria-label="Back To Top">
+
+    ↑
+
+</button>
+
+<!-- ====================================================== -->
+<!-- PAGE TRANSITION LAYER -->
+<!-- ====================================================== -->
+
+<div
+    id="pageTransition"
+    class="page-transition-layer">
+
+    <div class="transition-logo">
+
+        7LBSAA
+
+    </div>
+
+</div>
+
+<!-- ====================================================== -->
+<!-- GLOBAL NOTIFICATION -->
+<!-- ====================================================== -->
+
+<div
+    id="notificationContainer"
+    class="notification-container">
+
+</div>
+
+<!-- ====================================================== -->
+<!-- AUDIO PLACEHOLDER -->
+<!-- ====================================================== -->
+
+<audio
+    id="uiClickSound"
+    preload="auto">
+
+    <source
+        src="./assets/audio/click.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+<!-- ====================================================== -->
+<!-- JAVASCRIPT -->
+<!-- ====================================================== -->
+
+<script>
+
+document.documentElement.classList.add("loading");
+
+gsap.registerPlugin(ScrollTrigger);
+
+</script>
+
+<!-- Swiper -->
+
+<script>
+
+const testimonialSwiper = new Swiper(".testimonialSwiper",{
+
+    loop:true,
+
+    speed:900,
+
+    spaceBetween:30,
+
+    autoplay:{
+        delay:3500
+    },
+
+    breakpoints:{
+
+        0:{
+            slidesPerView:1
+        },
+
+        768:{
+            slidesPerView:2
+        },
+
+        1200:{
+            slidesPerView:3
+        }
+
+    }
+
+});
+
+</script>
+
+<!-- ====================================================== -->
+<!-- APPLICATION MODULES -->
+<!-- ====================================================== -->
+
+<script
+type="module"
+src="./assets/js/theme-manager.js">
+
+</script>
+
+<script
+type="module"
+src="./assets/js/page-transition.js">
+
+</script>
+
+<script
+type="module"
+src="./assets/js/performance.js">
+
+</script>
+
+<script
+type="module"
+src="./assets/js/cursor-engine.js">
+
+</script>
+
+<script
+type="module"
+src="./assets/js/quick-view.js">
+
+</script>
+
+<script
+type="module"
+src="./assets/js/svg-engine.js">
+
+</script>
+
+<script
+type="module"
+src="./assets/js/skeleton-loader.js">
+
+</script>
+
+<script
+type="module"
+src="./assets/js/nav-controller.js">
+
+</script>
+
+<script
+type="module"
+src="./assets/js/animation-engine.js">
+
+</script>
+
+<script
+type="module"
+src="./assets/js/app-core.js">
+
+</script>
+
+</body>
+
+</html>
