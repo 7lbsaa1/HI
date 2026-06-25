@@ -11,34 +11,27 @@
 
   <meta name="theme-color" content="#000000">
 
-  <!-- SEO -->
   <meta property="og:title" content="7LBSAA LUXE">
   <meta property="og:description"
         content="Luxury Fashion Experience">
   <meta property="og:type" content="website">
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cairo:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="./css/variables.css">
   <link rel="stylesheet" href="./style.css">
 
-  <!-- GSAP -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
 
-  <!-- SplitType -->
   <script src="https://unpkg.com/split-type"></script>
 
-  <!-- Lenis -->
   <script src="https://unpkg.com/@studio-freight/lenis/bundled/lenis.min.js"></script>
 
-  <!-- Swiper -->
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
@@ -47,152 +40,71 @@
 
 <body class="loading">
 
-<!-- ====================================================== -->
-<!-- SVG DEFINITIONS -->
-<!-- ====================================================== -->
-
 <svg width="0" height="0" style="position:absolute">
-
 <defs>
-
 <linearGradient id="premiumGradient">
-
 <stop offset="0%" stop-color="#D4AF37"/>
-
 <stop offset="100%" stop-color="#F5E7A1"/>
-
 </linearGradient>
-
 <filter id="glassBlur">
-
 <feGaussianBlur stdDeviation="25"/>
-
 </filter>
-
 </defs>
-
 </svg>
 
-<!-- ====================================================== -->
-<!-- LOADER -->
-<!-- ====================================================== -->
-
 <div id="preloader" class="preloader-layer">
-
 <div class="preloader-wrap">
-
 <h1 class="preloader-brand">
 7LBSAA
 </h1>
-
 <div class="preloader-progress-track">
-
-<div
-id="preloaderTrack"
-class="preloader-progress-bar">
+<div id="preloaderTrack" class="preloader-progress-bar"></div>
 </div>
-
-</div>
-
 <p>
-
 Loading
-
-<span id="preloadCounter">
-
-0
-
-</span>
-
+<span id="preloadCounter">0</span>
 %
-
 </p>
-
 </div>
-
 </div>
-
-
-</div>
-
-<!-- ====================================================== -->
-<!-- SCROLL PROGRESS -->
-<!-- ====================================================== -->
 
 <div class="scroll-progress">
-
 <div id="scrollBar"></div>
-
 </div>
 
-<!-- ====================================================== -->
-<!-- NAVBAR -->
-<!-- ====================================================== -->
-
-<header
-id="globalHeader"
-class="main-navbar">
-
+<header id="globalHeader" class="main-navbar">
 <div class="nav-container">
-
-<a
-href="#"
-class="brand-logo">
-
+<a href="#" class="brand-logo">
 7LBSAA
-
 </a>
-
 <nav class="desktop-nav">
-
 <a href="#home">Home</a>
-
 <a href="#collections">Collections</a>
-
 <a href="#products">Shop</a>
-
 <a href="#about">About</a>
-
 <a href="#contact">Contact</a>
-
 </nav>
-
 <div class="nav-actions">
-
-<button
-id="themeToggle"
-class="icon-button">
-
-🌙
-
-</button>
-
-<button
-id="searchToggle"
-class="icon-button">
-
-🔍
-
-</button>
-
-<button
-id="cartToggle"
-class="icon-button">
-
+<button id="themeToggle" class="icon-button">🌙</button>
+<button id="searchToggle" class="icon-button">🔍</button>
+<button id="cartToggle" class="icon-button">
 🛒
-
-<span class="cart-count">
-
-0
-
-</span>
-
+<span class="cart-count">0</span>
 </button>
-
 </div>
-
 </div>
+</header>
 
+<div id="searchOverlay" class="search-overlay">
+    <button id="closeSearch" class="close-search">✕</button>
+    <div class="search-content">
+        <h2 class="split-words">Search Luxury Collections</h2>
+        <form class="search-form">
+            <input type="search" placeholder="Search products..." aria-label="Search Products">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</div>
 </header><!-- ====================================================== -->
 <!-- SEARCH OVERLAY -->
 <!-- ====================================================== -->
